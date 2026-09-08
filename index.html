@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio K3LH PPLG</title>
+    <title>Portofolio K3LH PPLG - Liquid Glass Edition</title>
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -11,7 +11,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Unicons CDN -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
@@ -24,107 +24,153 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        heading: ['Plus Jakarta Sans', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
                     },
                     colors: {
                         brand: {
+                            400: '#34d399',
                             500: '#10b981',
                             600: '#059669',
+                        }
+                    },
+                    animation: {
+                        'blob-slow': 'blob 12s infinite alternate ease-in-out',
+                        'blob-reverse': 'blob-reverse 15s infinite alternate ease-in-out',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '50%': { transform: 'translate(60px, -40px) scale(1.15)' },
+                            '100%': { transform: 'translate(-40px, 30px) scale(0.95)' },
+                        },
+                        'blob-reverse': {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '50%': { transform: 'translate(-50px, 50px) scale(1.2)' },
+                            '100%': { transform: 'translate(40px, -30px) scale(0.9)' },
                         }
                     }
                 }
             }
         }
     </script>
-</head>
-<body class="bg-slate-950 text-slate-300 font-sans antialiased selection:bg-brand-500 selection:text-slate-950 overflow-x-hidden">
 
-    <!-- NAVBAR -->
-    <header class="fixed top-0 left-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    <style>
+        /* Utility Custom Liquid Glass Base */
+        .liquid-glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37), inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
+        }
+        
+        .liquid-glass-hover {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .liquid-glass-hover:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(16, 185, 129, 0.4);
+            box-shadow: 0 12px 40px 0 rgba(16, 185, 129, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.4);
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body class="bg-[#07090e] text-slate-200 font-sans antialiased selection:bg-brand-500 selection:text-slate-950 overflow-x-hidden relative">
+
+    <!-- LIQUID AMBIENT BACKGROUND BLOBS (Efek Cairan Berkilau di Latar Belakang) -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-emerald-500/20 rounded-full blur-[120px] animate-blob-slow"></div>
+        <div class="absolute top-[30%] right-[-10%] w-[600px] h-[600px] bg-cyan-500/15 rounded-full blur-[140px] animate-blob-reverse"></div>
+        <div class="absolute bottom-[-10%] left-[20%] w-[550px] h-[550px] bg-indigo-500/15 rounded-full blur-[130px] animate-blob-slow"></div>
+    </div>
+
+    <!-- NAVBAR (LIQUID GLASS) -->
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 px-4 sm:px-8 py-4">
+        <div class="max-w-7xl mx-auto liquid-glass rounded-2xl px-6 h-16 flex items-center justify-between">
             <a href="#" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-xl bg-brand-500/10 border border-brand-500/30 flex items-center justify-center text-brand-500 group-hover:scale-105 transition-transform duration-300">
-                    <i class="uil uil-shield-check text-2xl"></i>
+                <div class="w-9 h-9 rounded-xl bg-brand-500/20 border border-brand-500/40 flex items-center justify-center text-brand-400 group-hover:scale-105 transition-transform duration-300">
+                    <i class="uil uil-shield-check text-xl"></i>
                 </div>
-                <span class="font-heading font-bold text-xl text-white tracking-tight">K3LH<span class="text-brand-500">.PPLG</span></span>
+                <span class="font-bold text-lg text-white tracking-tight">K3LH<span class="text-brand-400">.PPLG</span></span>
             </a>
 
             <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-                <a href="#pengertian" class="hover:text-brand-500 transition-colors duration-200">Pengertian</a>
-                <a href="#tujuan" class="hover:text-brand-500 transition-colors duration-200">Tujuan</a>
-                <a href="#contoh" class="hover:text-brand-500 transition-colors duration-200">Contoh</a>
-                <a href="#penerapan" class="hover:text-brand-500 transition-colors duration-200">Penerapan</a>
-                <a href="#anggota" class="hover:text-brand-500 transition-colors duration-200">Anggota</a>
+                <a href="#pengertian" class="hover:text-brand-400 transition-colors duration-200">Pengertian</a>
+                <a href="#tujuan" class="hover:text-brand-400 transition-colors duration-200">Tujuan</a>
+                <a href="#contoh" class="hover:text-brand-400 transition-colors duration-200">Contoh</a>
+                <a href="#penerapan" class="hover:text-brand-400 transition-colors duration-200">Penerapan</a>
+                <a href="#anggota" class="hover:text-brand-400 transition-colors duration-200">Anggota</a>
             </nav>
 
-            <a href="#penerapan" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-brand-500 text-slate-950 font-semibold text-sm hover:bg-brand-600 active:scale-95 transition-all duration-200">
-                Pelajari SOP
+            <a href="#penerapan" class="hidden sm:inline-flex items-center justify-center px-5 py-2 rounded-xl bg-brand-500/80 hover:bg-brand-500 text-slate-950 font-semibold text-sm shadow-lg shadow-brand-500/20 active:scale-95 transition-all duration-200">
+                SOP Kerja
             </a>
         </div>
     </header>
 
     <!-- HERO SECTION -->
-    <section class="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden">
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-500/10 rounded-full blur-[140px] pointer-events-none"></div>
-
-        <div class="max-w-4xl mx-auto px-6 text-center relative z-10" data-aos="fade-up" data-aos-duration="1000">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 border border-slate-800 text-brand-500 text-xs font-semibold uppercase tracking-wider mb-8">
-                <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+    <section class="relative min-h-screen flex items-center justify-center pt-28 pb-16 z-10">
+        <div class="max-w-4xl mx-auto px-6 text-center" data-aos="fade-up" data-aos-duration="1000">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full liquid-glass border-brand-500/30 text-brand-400 text-xs font-semibold uppercase tracking-wider mb-8">
+                <span class="w-2 h-2 rounded-full bg-brand-400 animate-pulse"></span>
                 Portofolio Edukasi K3LH & PPLG
             </div>
-            <h1 class="font-heading text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6">
+            
+            <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6">
                 Kesehatan & Keselamatan Kerja <br>
-                <span class="bg-gradient-to-r from-brand-500 via-emerald-400 to-cyan-400 bg-clip-text text-transparent">Dunia Software & Gim</span>
+                <span class="bg-gradient-to-r from-brand-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">Dunia Software & Gim</span>
             </h1>
-            <p class="text-slate-400 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+            
+            <p class="text-slate-300 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed font-light">
                 Panduan komprehensif penerapan K3LH spesifik untuk Developer, Software Engineer, dan Game Developer demi lingkungan kerja sehat & produktif.
             </p>
+            
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#pengertian" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-500 text-slate-950 font-bold hover:bg-brand-600 active:scale-95 transition-all duration-200">
+                <a href="#pengertian" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-brand-500 text-slate-950 font-bold hover:bg-brand-400 shadow-lg shadow-brand-500/25 active:scale-95 transition-all duration-300">
                     Mulai Jelajahi
                 </a>
-                <a href="#anggota" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-900 text-white font-semibold border border-slate-800 hover:bg-slate-800 transition-all duration-200">
-                    Lihat Anggota Tim
+                <a href="#anggota" class="w-full sm:w-auto px-8 py-4 rounded-2xl liquid-glass text-white font-semibold hover:bg-white/10 transition-all duration-300">
+                    Lihat Tim
                 </a>
             </div>
         </div>
     </section>
 
     <!-- PENGERTIAN SECTION -->
-    <section id="pengertian" class="py-24 border-t border-slate-900">
+    <section id="pengertian" class="py-24 relative z-10">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div data-aos="fade-right">
-                    <div class="text-brand-500 font-semibold text-sm uppercase tracking-wider mb-3">Definisi</div>
-                    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white mb-6">Pengertian K3LH dalam PPLG</h2>
-                    <p class="text-slate-400 leading-relaxed mb-4">
+                    <div class="text-brand-400 font-semibold text-sm uppercase tracking-wider mb-3">Definisi Utama</div>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">Pengertian K3LH dalam PPLG</h2>
+                    <p class="text-slate-300 leading-relaxed mb-4">
                         <strong class="text-white">K3LH dalam PPLG</strong> adalah program perlindungan keselamatan, kesehatan kerja, serta kelestarian lingkungan yang disesuaikan dengan aktivitas pengembangan perangkat lunak dan gim.
                     </p>
-                    <p class="text-slate-400 leading-relaxed">
-                        Fokus utama K3LH di bidang PPLG meliputi <span class="text-brand-500 font-medium">Ergonomi Komputer</span> (mencegah gangguan otot & tulang), <span class="text-brand-500 font-medium">Kesehatan Mata</span>, pencegahan stres kerja (<span class="text-brand-500 font-medium">burnout</span>), <span class="text-brand-500 font-medium">Keamanan Kelistrikan Lab</span>, serta efisiensi energi komputasi (<span class="text-brand-500 font-medium">Green IT</span>).
+                    <p class="text-slate-300 leading-relaxed">
+                        Fokus utama K3LH di bidang PPLG meliputi <span class="text-brand-400 font-medium">Ergonomi Komputer</span> (mencegah gangguan otot & tulang), <span class="text-brand-400 font-medium">Kesehatan Mata</span>, pencegahan stres kerja (<span class="text-brand-400 font-medium">burnout</span>), <span class="text-brand-400 font-medium">Keamanan Kelistrikan Lab</span>, serta efisiensi energi komputasi (<span class="text-brand-400 font-medium">Green IT</span>).
                     </p>
                 </div>
                 
                 <div class="grid grid-cols-2 gap-4" data-aos="fade-left">
-                    <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
-                        <i class="uil uil-heart-medical text-brand-500 text-3xl mb-3 block"></i>
-                        <h3 class="font-heading font-semibold text-white text-lg mb-1">Kesehatan</h3>
-                        <p class="text-slate-400 text-sm">Menjaga fisik & mental programmer dari dampak negatif kerja radiasi layar dan duduk lama.</p>
+                    <div class="p-6 rounded-2xl liquid-glass liquid-glass-hover">
+                        <i class="uil uil-heart-medical text-brand-400 text-3xl mb-3 block"></i>
+                        <h3 class="font-bold text-white text-lg mb-1">Kesehatan</h3>
+                        <p class="text-slate-400 text-sm">Menjaga fisik & mental programmer dari dampak radiasi layar & duduk lama.</p>
                     </div>
-                    <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
+                    <div class="p-6 rounded-2xl liquid-glass liquid-glass-hover">
                         <i class="uil uil-shield-exclamation text-cyan-400 text-3xl mb-3 block"></i>
-                        <h3 class="font-heading font-semibold text-white text-lg mb-1">Keselamatan</h3>
-                        <p class="text-slate-400 text-sm">Mencegah insiden bahaya kelistrikan, tersandung kabel, dan bahaya hardware di lab.</p>
+                        <h3 class="font-bold text-white text-lg mb-1">Keselamatan</h3>
+                        <p class="text-slate-400 text-sm">Mencegah insiden kelistrikan, tersandung kabel, dan bahaya hardware di lab.</p>
                     </div>
-                    <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
+                    <div class="p-6 rounded-2xl liquid-glass liquid-glass-hover">
                         <i class="uil uil-trees text-emerald-400 text-3xl mb-3 block"></i>
-                        <h3 class="font-heading font-semibold text-white text-lg mb-1">Lingkungan</h3>
+                        <h3 class="font-bold text-white text-lg mb-1">Lingkungan</h3>
                         <p class="text-slate-400 text-sm">Pengelolaan daur ulang limbah komponen komputer bekas (e-waste).</p>
                     </div>
-                    <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
+                    <div class="p-6 rounded-2xl liquid-glass liquid-glass-hover">
                         <i class="uil uil-laptop-cloud text-purple-400 text-3xl mb-3 block"></i>
-                        <h3 class="font-heading font-semibold text-white text-lg mb-1">Fokus PPLG</h3>
+                        <h3 class="font-bold text-white text-lg mb-1">Fokus PPLG</h3>
                         <p class="text-slate-400 text-sm">Standar operasional khusus di studio software house dan lab IT.</p>
                     </div>
                 </div>
@@ -133,179 +179,188 @@
     </section>
 
     <!-- TUJUAN SECTION -->
-    <section id="tujuan" class="py-24 bg-slate-900/30 border-t border-slate-900">
+    <section id="tujuan" class="py-24 relative z-10">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
-                <div class="text-brand-500 font-semibold text-sm uppercase tracking-wider mb-3">Manfaat Utamanya</div>
-                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white">Tujuan K3LH dalam PPLG</h2>
+                <div class="text-brand-400 font-semibold text-sm uppercase tracking-wider mb-3">Manfaat Utamanya</div>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white">Tujuan K3LH dalam PPLG</h2>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-brand-500/50 hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center text-2xl mb-6"><i class="uil uil-user-check"></i></div>
-                    <h3 class="font-heading font-bold text-white text-xl mb-3">1. Proteksi Diri</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Mencegah penyakit akibat kerja seperti Carpal Tunnel Syndrome dan kelelahan mata kronis.</p>
+                <div class="p-8 rounded-3xl liquid-glass liquid-glass-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-500/20 text-brand-400 border border-brand-500/30 flex items-center justify-center text-2xl mb-6"><i class="uil uil-user-check"></i></div>
+                    <h3 class="font-bold text-white text-xl mb-3">1. Proteksi Diri</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">Mencegah penyakit akibat kerja seperti Carpal Tunnel Syndrome dan kelelahan mata kronis.</p>
                 </div>
 
-                <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-brand-500/50 hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-2xl mb-6"><i class="uil uil-bolt"></i></div>
-                    <h3 class="font-heading font-bold text-white text-xl mb-3">2. Proteksi Perangkat</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Melindungi PC, Laptop, dan Server dari kerusakan akibat konsleting arus listrik atau overheating.</p>
+                <div class="p-8 rounded-3xl liquid-glass liquid-glass-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 rounded-2xl bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 flex items-center justify-center text-2xl mb-6"><i class="uil uil-bolt"></i></div>
+                    <h3 class="font-bold text-white text-xl mb-3">2. Proteksi Perangkat</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">Melindungi PC, Laptop, dan Server dari kerusakan akibat konsleting arus listrik atau overheating.</p>
                 </div>
 
-                <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-brand-500/50 hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-2xl mb-6"><i class="uil uil-chart-line"></i></div>
-                    <h3 class="font-heading font-bold text-white text-xl mb-3">3. Produktivitas Kode</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Kondisi fisik dan mental yang prima mendukung hasil pengerjaan kode program yang optimal.</p>
+                <div class="p-8 rounded-3xl liquid-glass liquid-glass-hover" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-12 h-12 rounded-2xl bg-purple-500/20 text-purple-400 border border-purple-500/30 flex items-center justify-center text-2xl mb-6"><i class="uil uil-chart-line"></i></div>
+                    <h3 class="font-bold text-white text-xl mb-3">3. Produktivitas Kode</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">Kondisi fisik dan mental yang prima mendukung hasil pengerjaan kode program yang optimal.</p>
                 </div>
 
-                <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-brand-500/50 hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
-                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-2xl mb-6"><i class="uil uil-leaf"></i></div>
-                    <h3 class="font-heading font-bold text-white text-xl mb-3">4. Efisiensi Energi</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Mendukung program Green Computing melalui penghematan energi listrik peralatan komputasi.</p>
+                <div class="p-8 rounded-3xl liquid-glass liquid-glass-hover" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center text-2xl mb-6"><i class="uil uil-leaf"></i></div>
+                    <h3 class="font-bold text-white text-xl mb-3">4. Efisiensi Energi</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">Mendukung program Green Computing melalui penghematan energi listrik peralatan komputasi.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CONTOH SECTION -->
-    <section id="contoh" class="py-24 border-t border-slate-900">
+    <section id="contoh" class="py-24 relative z-10">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
-                <div class="text-brand-500 font-semibold text-sm uppercase tracking-wider mb-3">Identifikasi Bahaya</div>
-                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white">Contoh Risiko K3LH pada PPLG</h2>
+                <div class="text-brand-400 font-semibold text-sm uppercase tracking-wider mb-3">Identifikasi Bahaya</div>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white">Contoh Risiko K3LH pada PPLG</h2>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-rose-500 text-3xl mb-4"><i class="uil uil-exclamation-triangle"></i></div>
-                    <h3 class="font-heading font-bold text-white text-lg mb-2">Postur Duduk Buruk</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Membungkuk berjam-jam saat coding memicu sakit punggung bawah dan gangguan tulang belakang.</p>
+                <div class="p-8 rounded-3xl liquid-glass liquid-glass-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-rose-400 text-3xl mb-4"><i class="uil uil-exclamation-triangle"></i></div>
+                    <h3 class="font-bold text-white text-xl mb-2">Postur Duduk Buruk</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">Membungkuk berjam-jam saat coding memicu sakit punggung bawah dan gangguan tulang belakang.</p>
                 </div>
 
-                <div class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-amber-500 text-3xl mb-4"><i class="uil uil-eye"></i></div>
-                    <h3 class="font-heading font-bold text-white text-lg mb-2">Radiasi & Kelelahan Mata</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Menatap layar monitor tanpa jeda menyebabkan mata perih, kering, serta pusing (Computer Vision Syndrome).</p>
+                <div class="p-8 rounded-3xl liquid-glass liquid-glass-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-amber-400 text-3xl mb-4"><i class="uil uil-eye"></i></div>
+                    <h3 class="font-bold text-white text-xl mb-2">Radiasi & Kelelahan Mata</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">Menatap layar monitor tanpa jeda menyebabkan mata perih, kering, serta pusing (Computer Vision Syndrome).</p>
                 </div>
 
-                <div class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800" data-aos="fade-up" data-aos-delay="300">
-                    <div class="text-cyan-500 text-3xl mb-4"><i class="uil uil-plug"></i></div>
-                    <h3 class="font-heading font-bold text-white text-lg mb-2">Penataan Kabel Berantakan</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Kabel daya PC atau LAN yang terurai melintasi lantai berisiko memicu tersandung dan korsleting listrik.</p>
+                <div class="p-8 rounded-3xl liquid-glass liquid-glass-hover" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-cyan-400 text-3xl mb-4"><i class="uil uil-plug"></i></div>
+                    <h3 class="font-bold text-white text-xl mb-2">Penataan Kabel Berantakan</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">Kabel daya PC atau LAN yang terurai melintasi lantai berisiko memicu tersandung dan korsleting listrik.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- PENERAPAN SECTION -->
-    <section id="penerapan" class="py-24 bg-slate-900/30 border-t border-slate-900">
+    <section id="penerapan" class="py-24 relative z-10">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
-                <div class="text-brand-500 font-semibold text-sm uppercase tracking-wider mb-3">SOP Kerja</div>
-                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white">Cara Penerapan K3LH PPLG</h2>
+                <div class="text-brand-400 font-semibold text-sm uppercase tracking-wider mb-3">SOP Kerja Standard</div>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white">Cara Penerapan K3LH PPLG</h2>
             </div>
 
             <div class="grid md:grid-cols-2 gap-8">
-                <div class="flex gap-5 p-6 rounded-2xl bg-slate-900 border border-slate-800" data-aos="fade-right">
-                    <div class="w-10 h-10 rounded-full bg-brand-500 text-slate-950 font-extrabold flex items-center justify-center shrink-0">1</div>
+                <div class="flex gap-5 p-6 rounded-3xl liquid-glass liquid-glass-hover" data-aos="fade-right">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-500 text-slate-950 font-extrabold flex items-center justify-center shrink-0 shadow-lg shadow-brand-500/20">01</div>
                     <div>
-                        <h3 class="font-heading font-bold text-white text-xl mb-2">Posisi Duduk Ergonomis</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">Atur posisi monitor sejajar dengan pandangan mata. Gunakan kursi berpenopang punggung dengan siku membentuk sudut 90 derajat.</p>
+                        <h3 class="font-bold text-white text-xl mb-2">Posisi Duduk Ergonomis</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">Atur posisi monitor sejajar dengan pandangan mata. Gunakan kursi berpenopang punggung dengan siku membentuk sudut 90 derajat.</p>
                     </div>
                 </div>
 
-                <div class="flex gap-5 p-6 rounded-2xl bg-slate-900 border border-slate-800" data-aos="fade-left">
-                    <div class="w-10 h-10 rounded-full bg-brand-500 text-slate-950 font-extrabold flex items-center justify-center shrink-0">2</div>
+                <div class="flex gap-5 p-6 rounded-3xl liquid-glass liquid-glass-hover" data-aos="fade-left">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-500 text-slate-950 font-extrabold flex items-center justify-center shrink-0 shadow-lg shadow-brand-500/20">02</div>
                     <div>
-                        <h3 class="font-heading font-bold text-white text-xl mb-2">Aturan 20-20-20</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">Setiap 20 menit bekerja di depan komputer, lihatlah objek sejauh 20 kaki (6 meter) selama 20 detik untuk mengistirahatkan mata.</p>
+                        <h3 class="font-bold text-white text-xl mb-2">Aturan 20-20-20</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">Setiap 20 menit bekerja di depan komputer, lihatlah objek sejauh 20 kaki (6 meter) selama 20 detik untuk mengistirahatkan mata.</p>
                     </div>
                 </div>
 
-                <div class="flex gap-5 p-6 rounded-2xl bg-slate-900 border border-slate-800" data-aos="fade-right">
-                    <div class="w-10 h-10 rounded-full bg-brand-500 text-slate-950 font-extrabold flex items-center justify-center shrink-0">3</div>
+                <div class="flex gap-5 p-6 rounded-3xl liquid-glass liquid-glass-hover" data-aos="fade-right">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-500 text-slate-950 font-extrabold flex items-center justify-center shrink-0 shadow-lg shadow-brand-500/20">03</div>
                     <div>
-                        <h3 class="font-heading font-bold text-white text-xl mb-2">Manajemen Perkabelan Lab</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">Gunakan pelindung kabel (cable ducting), hindari penumpukan steker berlebih, dan jauhi cairan dari perangkat elektronik.</p>
+                        <h3 class="font-bold text-white text-xl mb-2">Manajemen Perkabelan Lab</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">Gunakan pelindung kabel (cable ducting), hindari penumpukan steker berlebih, dan jauhi cairan dari perangkat elektronik.</p>
                     </div>
                 </div>
 
-                <div class="flex gap-5 p-6 rounded-2xl bg-slate-900 border border-slate-800" data-aos="fade-left">
-                    <div class="w-10 h-10 rounded-full bg-brand-500 text-slate-950 font-extrabold flex items-center justify-center shrink-0">4</div>
+                <div class="flex gap-5 p-6 rounded-3xl liquid-glass liquid-glass-hover" data-aos="fade-left">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-500 text-slate-950 font-extrabold flex items-center justify-center shrink-0 shadow-lg shadow-brand-500/20">04</div>
                     <div>
-                        <h3 class="font-heading font-bold text-white text-xl mb-2">Penerapan Green Computing</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">Matikan PC/Server saat tidak digunakan, terapkan algoritma program yang efisien daya, serta kelola limbah hardware bekas.</p>
+                        <h3 class="font-bold text-white text-xl mb-2">Penerapan Green Computing</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">Matikan PC/Server saat tidak digunakan, terapkan algoritma program yang efisien daya, serta kelola limbah hardware bekas.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ANGGOTA SECTION (HANYA NAMA) -->
-    <section id="anggota" class="py-24 border-t border-slate-900 relative">
+    <!-- ANGGOTA SECTION (7 ANGGOTA - TANPA FOTO PROFIL, LIQUID GLASS UI) -->
+    <section id="anggota" class="py-24 relative z-10">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
-                <div class="text-brand-500 font-semibold text-sm uppercase tracking-wider mb-3">Tim Kelompok</div>
-                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white">Anggota Tim</h2>
+                <div class="text-brand-400 font-semibold text-sm uppercase tracking-wider mb-3">Tim Kelompok</div>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white">Anggota Tim</h2>
             </div>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Grid 7 Anggota Minimalis -->
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 <!-- Anggota 1 -->
-                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 flex items-center gap-4 hover:border-brand-500/60 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center font-extrabold text-lg">
+                <div class="p-6 rounded-3xl liquid-glass liquid-glass-hover flex items-center gap-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-500/15 border border-brand-500/30 text-brand-400 font-bold flex items-center justify-center text-lg shrink-0 shadow-inner">
                         01
                     </div>
-                    <h3 class="font-heading font-bold text-white text-lg">Raivanka</h3>
+                    <span class="font-bold text-white text-lg">Raivanka</span>
                 </div>
 
                 <!-- Anggota 2 -->
-                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 flex items-center gap-4 hover:border-brand-500/60 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center font-extrabold text-lg">
+                <div class="p-6 rounded-3xl liquid-glass liquid-glass-hover flex items-center gap-4" data-aos="fade-up" data-aos-delay="150">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-500/15 border border-brand-500/30 text-brand-400 font-bold flex items-center justify-center text-lg shrink-0 shadow-inner">
                         02
                     </div>
-                    <h3 class="font-heading font-bold text-white text-lg">Devita</h3>
+                    <span class="font-bold text-white text-lg">Devita</span>
                 </div>
 
                 <!-- Anggota 3 -->
-                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 flex items-center gap-4 hover:border-brand-500/60 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center font-extrabold text-lg">
+                <div class="p-6 rounded-3xl liquid-glass liquid-glass-hover flex items-center gap-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-500/15 border border-brand-500/30 text-brand-400 font-bold flex items-center justify-center text-lg shrink-0 shadow-inner">
                         03
                     </div>
-                    <h3 class="font-heading font-bold text-white text-lg">Dini</h3>
+                    <span class="font-bold text-white text-lg">Dini</span>
                 </div>
 
                 <!-- Anggota 4 -->
-                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 flex items-center gap-4 hover:border-brand-500/60 transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
-                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center font-extrabold text-lg">
+                <div class="p-6 rounded-3xl liquid-glass liquid-glass-hover flex items-center gap-4" data-aos="fade-up" data-aos-delay="250">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-500/15 border border-brand-500/30 text-brand-400 font-bold flex items-center justify-center text-lg shrink-0 shadow-inner">
                         04
                     </div>
-                    <h3 class="font-heading font-bold text-white text-lg">Iqbal</h3>
+                    <span class="font-bold text-white text-lg">Iqbal</span>
                 </div>
 
                 <!-- Anggota 5 -->
-                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 flex items-center gap-4 hover:border-brand-500/60 transition-all duration-300" data-aos="fade-up" data-aos-delay="500">
-                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center font-extrabold text-lg">
+                <div class="p-6 rounded-3xl liquid-glass liquid-glass-hover flex items-center gap-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-500/15 border border-brand-500/30 text-brand-400 font-bold flex items-center justify-center text-lg shrink-0 shadow-inner">
                         05
                     </div>
-                    <h3 class="font-heading font-bold text-white text-lg">Dimas</h3>
+                    <span class="font-bold text-white text-lg">Dani</span>
                 </div>
 
                 <!-- Anggota 6 -->
-                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 flex items-center gap-4 hover:border-brand-500/60 transition-all duration-300" data-aos="fade-up" data-aos-delay="600">
-                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center font-extrabold text-lg">
+                <div class="p-6 rounded-3xl liquid-glass liquid-glass-hover flex items-center gap-4" data-aos="fade-up" data-aos-delay="350">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-500/15 border border-brand-500/30 text-brand-400 font-bold flex items-center justify-center text-lg shrink-0 shadow-inner">
                         06
                     </div>
-                    <h3 class="font-heading font-bold text-white text-lg">Satria</h3>
+                    <span class="font-bold text-white text-lg">Dimas</span>
+                </div>
+
+                <!-- Anggota 7 -->
+                <div class="p-6 rounded-3xl liquid-glass liquid-glass-hover flex items-center gap-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-500/15 border border-brand-500/30 text-brand-400 font-bold flex items-center justify-center text-lg shrink-0 shadow-inner">
+                        07
+                    </div>
+                    <span class="font-bold text-white text-lg">Satria</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="py-8 bg-slate-950 border-t border-slate-900 text-center text-sm text-slate-500">
+    <footer class="py-8 relative z-10 text-center text-sm text-slate-400 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-6">
-            <p>&copy; Portofolio K3LH PPLG. Mengutamakan Keselamatan & Kesehatan Kerja Digital.</p>
+            <p>&copy; Portofolio K3LH PPLG. Tema Liquid Glass UI & Super Smooth Animation. Cihuyy</p>
         </div>
     </footer>
 
