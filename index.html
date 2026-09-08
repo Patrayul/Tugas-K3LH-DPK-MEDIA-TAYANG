@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Portofolio Lengkap K3LH PPLG - Ultra Smooth Edition</title>
+    <title>Portofolio Lengkap K3LH PPLG - Super Super Ultra Smooth</title>
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -37,13 +37,13 @@
                     keyframes: {
                         blob: {
                             '0%': { transform: 'translate3d(0px, 0px, 0) scale(1) rotate(0deg)' },
-                            '50%': { transform: 'translate3d(60px, -50px, 0) scale(1.15) rotate(180deg)' },
-                            '100%': { transform: 'translate3d(-40px, 30px, 0) scale(0.95) rotate(360deg)' },
+                            '50%': { transform: 'translate3d(80px, -60px, 0) scale(1.2) rotate(180deg)' },
+                            '100%': { transform: 'translate3d(-50px, 40px, 0) scale(0.9) rotate(360deg)' },
                         },
                         'blob-reverse': {
                             '0%': { transform: 'translate3d(0px, 0px, 0) scale(1) rotate(0deg)' },
-                            '50%': { transform: 'translate3d(-50px, 50px, 0) scale(1.2) rotate(-180deg)' },
-                            '100%': { transform: 'translate3d(40px, -30px, 0) scale(0.9) rotate(-360deg)' },
+                            '50%': { transform: 'translate3d(-70px, 60px, 0) scale(1.25) rotate(-180deg)' },
+                            '100%': { transform: 'translate3d(50px, -40px, 0) scale(0.85) rotate(-360deg)' },
                         }
                     }
                 }
@@ -54,39 +54,73 @@
     <style>
         * {
             box-sizing: border-box;
-            scrollbar-width: none;
+            -webkit-tap-highlight-color: transparent;
         }
-        *::-webkit-scrollbar {
+        
+        /* Container Scroll dengan Fizik Super Halus */
+        #navScrollContainer {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            cursor: grab;
+            will-change: scroll-position;
+        }
+        #navScrollContainer::-webkit-scrollbar {
             display: none;
         }
-
-        /* Glassmorphism Ultra Premium */
-        .liquid-glass {
-            background: rgba(15, 23, 42, 0.78);
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.7);
+        #navScrollContainer:active {
+            cursor: grabbing;
         }
 
-        /* Ambient Light Cursor */
+        /* Glassmorphism Ultra Smooth */
+        .liquid-glass {
+            background: rgba(15, 23, 42, 0.72);
+            backdrop-filter: blur(24px) saturate(200%);
+            -webkit-backdrop-filter: blur(24px) saturate(200%);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.7);
+            will-change: transform, border-color, box-shadow;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                        border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                        box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .liquid-glass-card {
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, border-color, background-color;
+        }
+
+        .liquid-glass-card:hover {
+            transform: translateY(-4px) scale(1.02);
+            background: rgba(30, 41, 59, 0.75);
+            border-color: rgba(52, 211, 153, 0.4);
+            box-shadow: 0 12px 30px -5px rgba(16, 185, 129, 0.25);
+        }
+
+        /* Ambient Light Cursor Ultra Responsive */
         #cursor-glow {
             pointer-events: none;
             position: fixed;
-            width: 550px;
-            height: 550px;
+            top: 0;
+            left: 0;
+            width: 600px;
+            height: 600px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, rgba(6, 182, 212, 0.03) 50%, transparent 70%);
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.14) 0%, rgba(6, 182, 212, 0.04) 45%, transparent 70%);
             transform: translate3d(-50%, -50%, 0);
-            transition: transform 0.15s ease-out;
             z-index: 1;
-            will-change: left, top;
+            will-change: transform;
         }
 
-        /* Slide Container Transitions */
+        /* Slide Container Ultra Fluid */
         .slide-container {
             display: flex;
-            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
             will-change: transform;
         }
 
@@ -97,10 +131,13 @@
             overflow-y: auto;
             padding-top: 2rem;
             padding-bottom: 8rem;
-            opacity: 0.15;
-            filter: blur(8px);
-            transform: scale(0.94);
-            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            opacity: 0.1;
+            filter: blur(12px);
+            transform: scale(0.92);
+            transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+                        filter 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, filter, transform;
         }
 
         .slide-item.active-slide {
@@ -109,7 +146,7 @@
             transform: scale(1);
         }
 
-        /* ULTRA-SMOOTH ELASTIC WATER DROP TASKBAR */
+        /* SUPER SUPER ULTRA-SMOOTH SPRING WATER DROP TASKBAR */
         #water-drop {
             position: absolute;
             top: 4px;
@@ -117,25 +154,45 @@
             left: 0;
             width: 0px;
             border-radius: 12px;
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.35) 0%, rgba(6, 182, 212, 0.25) 100%);
-            border: 1px solid rgba(52, 211, 153, 0.7);
-            box-shadow: 0 0 20px rgba(16, 185, 129, 0.4), inset 0 1px 2px rgba(255, 255, 255, 0.5);
-            /* Spring Physics Cubic Bezier */
-            transition: left 0.55s cubic-bezier(0.34, 1.56, 0.64, 1), width 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.38) 0%, rgba(6, 182, 212, 0.28) 100%);
+            border: 1px solid rgba(52, 211, 153, 0.75);
+            box-shadow: 0 0 25px rgba(16, 185, 129, 0.45), inset 0 1px 2px rgba(255, 255, 255, 0.6);
+            transition: left 0.6s cubic-bezier(0.25, 1.4, 0.3, 1), width 0.6s cubic-bezier(0.25, 1.4, 0.3, 1);
             pointer-events: none;
             z-index: 0;
+            will-change: left, width;
+        }
+
+        /* EFEK SMOOTH HOVER DISENTUH KURSOR PADA NAV BUTTONS */
+        .nav-btn {
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.35s ease;
+            will-change: transform;
+        }
+        .nav-btn i, .nav-btn span {
+            display: inline-block;
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform;
+        }
+        .nav-btn:hover i {
+            transform: scale(1.22);
+        }
+        .nav-btn:hover span {
+            transform: scale(1.08);
+        }
+        .nav-btn:active {
+            transform: scale(0.95);
         }
     </style>
 </head>
-<body class="bg-[#030508] text-slate-100 font-sans antialiased h-full overflow-hidden relative">
+<body class="bg-[#020408] text-slate-100 font-sans antialiased h-full overflow-hidden relative selection:bg-brand-500/30 selection:text-brand-400">
 
     <!-- AMBIENT CURSOR GLOW -->
     <div id="cursor-glow"></div>
 
     <!-- BACKGROUND BLOBS -->
     <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <div class="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-emerald-500/15 rounded-full blur-[130px] animate-blob-slow"></div>
-        <div class="absolute top-[40%] right-[-10%] w-[650px] h-[650px] bg-cyan-500/10 rounded-full blur-[150px] animate-blob-reverse"></div>
+        <div class="absolute top-[-15%] left-[-15%] w-[700px] h-[700px] bg-emerald-500/15 rounded-full blur-[140px] animate-blob-slow"></div>
+        <div class="absolute top-[35%] right-[-15%] w-[750px] h-[750px] bg-cyan-500/10 rounded-full blur-[160px] animate-blob-reverse"></div>
     </div>
 
     <!-- MAIN PRESENTATION SLIDES -->
@@ -145,17 +202,17 @@
             <!-- SLIDE 0: HERO -->
             <section class="slide-item active-slide flex items-center justify-center">
                 <div class="max-w-4xl mx-auto px-6 text-center my-auto">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full liquid-glass border-brand-500/40 text-brand-400 text-xs font-semibold uppercase tracking-wider mb-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full liquid-glass border-brand-500/40 text-brand-400 text-xs font-semibold uppercase tracking-wider mb-6 hover:scale-105 transition-transform duration-300">
                         <i class="fa-solid fa-laptop-code"></i> Portofolio Lengkap K3LH PPLG
                     </div>
                     <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6">
                         Kesehatan & Keselamatan Kerja <br>
                         <span class="bg-gradient-to-r from-brand-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">Dunia Software & Gim</span>
                     </h1>
-                    <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto mb-8">
+                    <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto mb-8 leading-relaxed">
                         Panduan komprehensif penerapan K3LH spesifik untuk Software Engineer & Game Developer guna menjaga produktivitas, keselamatan hardware, serta kesehatan fisik dan mental.
                     </p>
-                    <button onclick="goToSlide(1)" class="px-7 py-3 rounded-2xl bg-brand-500 text-slate-950 font-extrabold hover:bg-brand-400 shadow-lg shadow-brand-500/30 transition-all inline-flex items-center gap-2 cursor-pointer">
+                    <button onclick="goToSlide(1)" class="px-8 py-3.5 rounded-2xl bg-brand-500 text-slate-950 font-extrabold hover:bg-brand-400 shadow-xl shadow-brand-500/30 hover:shadow-brand-400/40 hover:scale-105 active:scale-95 transition-all duration-300 inline-flex items-center gap-2 cursor-pointer">
                         <i class="fa-solid fa-play"></i> Mulai Presentasi
                     </button>
                 </div>
@@ -165,25 +222,13 @@
             <section class="slide-item flex items-center justify-center">
                 <div class="max-w-5xl mx-auto px-6 w-full my-auto">
                     <div class="text-center mb-8">
-                        <div class="text-brand-400 text-xs font-bold uppercase mb-2"><i class="fa-solid fa-users"></i> Tim Penyusun</div>
+                        <div class="text-brand-400 text-xs font-bold uppercase mb-2 tracking-wider"><i class="fa-solid fa-users"></i> Tim Penyusun</div>
                         <h2 class="text-3xl font-bold text-white">7 Anggota Kelompok</h2>
                     </div>
-                    <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                        <script>
-                            for(let i=1; i<=7; i++){
-                                document.write(`
-                                    <div class="p-4 rounded-2xl liquid-glass flex items-center gap-3 border border-white/10 hover:border-brand-500/40 transition-all">
-                                        <div class="w-10 h-10 rounded-xl bg-brand-500/20 text-brand-400 flex items-center justify-center font-bold text-sm shrink-0">
-                                            <i class="fa-solid fa-user-gear"></i>
-                                        </div>
-                                        <div>
-                                            <span class="font-semibold text-white text-sm block">Anggota ${i}</span>
-                                            <span class="text-xs text-slate-400">Pengembang PPLG</span>
-                                        </div>
-                                    </div>
-                                `);
-                            }
-                        </script>
+                    
+                    <!-- CONTAINER ANGGOTA -->
+                    <div id="anggotaList" class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                        <!-- Render dari JavaScript -->
                     </div>
                 </div>
             </section>
@@ -193,7 +238,7 @@
                 <div class="max-w-5xl mx-auto px-6 w-full my-auto">
                     <div class="grid md:grid-cols-2 gap-8 items-center">
                         <div>
-                            <div class="text-brand-400 text-xs font-bold uppercase mb-2"><i class="fa-solid fa-scale-balanced"></i> Definisi & Dasar Hukum</div>
+                            <div class="text-brand-400 text-xs font-bold uppercase mb-2 tracking-wider"><i class="fa-solid fa-scale-balanced"></i> Definisi & Dasar Hukum</div>
                             <h2 class="text-3xl font-bold text-white mb-4">Pengertian & Regulasi K3LH</h2>
                             <p class="text-slate-300 text-sm leading-relaxed mb-4">
                                 K3LH PPLG adalah upaya perlindungan bagi *software developer* dan *game engineer* dari potensi bahaya fisik, kelelahan mental, kecelakaan hardware, serta kerusakan lingkungan laboratorium IT.
@@ -204,22 +249,22 @@
                             </div>
                         </div>
                         <div class="grid grid-cols-2 gap-3">
-                            <div class="p-4 rounded-2xl liquid-glass">
+                            <div class="p-4 rounded-2xl liquid-glass-card">
                                 <i class="fa-solid fa-heart-pulse text-brand-400 text-2xl mb-2"></i>
                                 <h3 class="font-bold text-white text-sm">Kesehatan</h3>
                                 <p class="text-slate-400 text-xs">Perlindungan fisik dari penyakit akibat kerja duduk terlalu lama.</p>
                             </div>
-                            <div class="p-4 rounded-2xl liquid-glass">
+                            <div class="p-4 rounded-2xl liquid-glass-card">
                                 <i class="fa-solid fa-shield-halved text-cyan-400 text-2xl mb-2"></i>
                                 <h3 class="font-bold text-white text-sm">Keselamatan</h3>
                                 <p class="text-slate-400 text-xs">Pencegahan insiden listrik & kerusakan komponen PC/Laptop.</p>
                             </div>
-                            <div class="p-4 rounded-2xl liquid-glass">
+                            <div class="p-4 rounded-2xl liquid-glass-card">
                                 <i class="fa-solid fa-leaf text-emerald-400 text-2xl mb-2"></i>
                                 <h3 class="font-bold text-white text-sm">Lingkungan</h3>
                                 <p class="text-slate-400 text-xs">Pengelolaan limbah elektronik (e-waste) & efisiensi daya.</p>
                             </div>
-                            <div class="p-4 rounded-2xl liquid-glass">
+                            <div class="p-4 rounded-2xl liquid-glass-card">
                                 <i class="fa-solid fa-brain text-purple-400 text-2xl mb-2"></i>
                                 <h3 class="font-bold text-white text-sm">Mental</h3>
                                 <p class="text-slate-400 text-xs">Menjaga stamina psikologis dari burnout saat coding.</p>
@@ -233,17 +278,17 @@
             <section class="slide-item flex items-center justify-center">
                 <div class="max-w-5xl mx-auto px-6 w-full my-auto">
                     <div class="text-center mb-6">
-                        <div class="text-brand-400 text-xs font-bold uppercase mb-2"><i class="fa-solid fa-bullseye"></i> Target Utama</div>
+                        <div class="text-brand-400 text-xs font-bold uppercase mb-2 tracking-wider"><i class="fa-solid fa-bullseye"></i> Target Utama</div>
                         <h2 class="text-3xl font-bold text-white">7 Objektif K3LH PPLG</h2>
                     </div>
                     <div class="grid md:grid-cols-3 gap-4 text-left">
-                        <div class="p-4 rounded-2xl liquid-glass"><i class="fa-solid fa-child text-brand-400 text-xl mb-2"></i><h4 class="font-bold text-sm text-white">1. Postur Ergonomis</h4><p class="text-xs text-slate-300">Mencegah penyakit tulang punggung & Carpal Tunnel Syndrome.</p></div>
-                        <div class="p-4 rounded-2xl liquid-glass"><i class="fa-solid fa-eye text-cyan-400 text-xl mb-2"></i><h4 class="font-bold text-sm text-white">2. Kesehatan Mata</h4><p class="text-xs text-slate-300">Menghindari Computer Vision Syndrome akibat paparan layar.</p></div>
-                        <div class="p-4 rounded-2xl liquid-glass"><i class="fa-solid fa-brain text-purple-400 text-xl mb-2"></i><h4 class="font-bold text-sm text-white">3. Manajemen Stres</h4><p class="text-xs text-slate-300">Mencegah burnout akibat tenggat waktu pengerjaan project.</p></div>
-                        <div class="p-4 rounded-2xl liquid-glass"><i class="fa-solid fa-bolt text-amber-400 text-xl mb-2"></i><h4 class="font-bold text-sm text-white">4. Keselamatan Kelistrikan</h4><p class="text-xs text-slate-300">Mencegah korsleting pada perangkat keras workstation.</p></div>
-                        <div class="p-4 rounded-2xl liquid-glass"><i class="fa-solid fa-fire-extinguisher text-rose-400 text-xl mb-2"></i><h4 class="font-bold text-sm text-white">5. Tanggap Darurat</h4><p class="text-xs text-slate-300">Menyiapkan jalur evakuasi & APAR di laboratorium komputer.</p></div>
-                        <div class="p-4 rounded-2xl liquid-glass"><i class="fa-solid fa-recycle text-emerald-400 text-xl mb-2"></i><h4 class="font-bold text-sm text-white">6. Green Computing</h4><p class="text-xs text-slate-300">Daur ulang komponen e-waste & efisiensi daya listrik.</p></div>
-                        <div class="p-4 rounded-2xl liquid-glass md:col-span-3 lg:col-span-1"><i class="fa-solid fa-shield-cat text-teal-400 text-xl mb-2"></i><h4 class="font-bold text-sm text-white">7. Keamanan Aset Data</h4><p class="text-xs text-slate-300">Menjaga kerahasiaan & integritas source code aplikasi/gim.</p></div>
+                        <div class="p-4 rounded-2xl liquid-glass-card"><i class="fa-solid fa-child text-brand-400 text-xl mb-2"></i><h4 class="font-bold text-sm text-white">1. Postur Ergonomis</h4><p class="text-xs text-slate-300">Mencegah penyakit tulang punggung & Carpal Tunnel Syndrome.</p></div>
+                        <div class="p-4 rounded-2xl liquid-glass-card"><i class="fa-solid fa-eye text-cyan-400 text-xl mb-2"></i><h4 class="font-bold text-sm text-white">2. Kesehatan Mata</h4><p class="text-xs text-slate-300">Menghindari Computer Vision Syndrome akibat paparan layar.</p></div>
+                        <div class="p-4 rounded-2xl liquid-glass-card"><i class="fa-solid fa-brain text-purple-400 text-xl mb-2"></i><h4 class="font-bold text-sm text-white">3. Manajemen Stres</h4><p class="text-xs text-slate-300">Mencegah burnout akibat tenggat waktu pengerjaan project.</p></div>
+                        <div class="p-4 rounded-2xl liquid-glass-card"><i class="fa-solid fa-bolt text-amber-400 text-xl mb-2"></i><h4 class="font-bold text-sm text-white">4. Keselamatan Kelistrikan</h4><p class="text-xs text-slate-300">Mencegah korsleting pada perangkat keras workstation.</p></div>
+                        <div class="p-4 rounded-2xl liquid-glass-card"><i class="fa-solid fa-fire-extinguisher text-rose-400 text-xl mb-2"></i><h4 class="font-bold text-sm text-white">5. Tanggap Darurat</h4><p class="text-xs text-slate-300">Menyiapkan jalur evakuasi & APAR di laboratorium komputer.</p></div>
+                        <div class="p-4 rounded-2xl liquid-glass-card"><i class="fa-solid fa-recycle text-emerald-400 text-xl mb-2"></i><h4 class="font-bold text-sm text-white">6. Green Computing</h4><p class="text-xs text-slate-300">Daur ulang komponen e-waste & efisiensi daya listrik.</p></div>
+                        <div class="p-4 rounded-2xl liquid-glass-card md:col-span-3 lg:col-span-1"><i class="fa-solid fa-shield-cat text-teal-400 text-xl mb-2"></i><h4 class="font-bold text-sm text-white">7. Keamanan Aset Data</h4><p class="text-xs text-slate-300">Menjaga kerahasiaan & integritas source code aplikasi/gim.</p></div>
                     </div>
                 </div>
             </section>
@@ -253,19 +298,19 @@
                 <div class="max-w-4xl mx-auto px-6 w-full my-auto text-center">
                     <h2 class="text-3xl font-bold text-white mb-6"><i class="fa-solid fa-compass text-brand-400"></i> Tujuan Utama K3LH PPLG</h2>
                     <div class="grid sm:grid-cols-2 gap-4 text-left">
-                        <div class="p-5 rounded-2xl liquid-glass border-l-4 border-l-brand-400">
+                        <div class="p-5 rounded-2xl liquid-glass-card border-l-4 border-l-brand-400">
                             <h3 class="font-bold text-white mb-2 text-base">Memaksimalkan Produktivitas Kodifikasi</h3>
                             <p class="text-xs text-slate-300 leading-relaxed">Pengembang yang memiliki stamina fisik sehat dan mata rileks dapat menulis baris kode secara konsisten tanpa cepat merasa lelah.</p>
                         </div>
-                        <div class="p-5 rounded-2xl liquid-glass border-l-4 border-l-cyan-400">
+                        <div class="p-5 rounded-2xl liquid-glass-card border-l-4 border-l-cyan-400">
                             <h3 class="font-bold text-white mb-2 text-base">Menurunkan Tingkat Eror & Bug</h3>
                             <p class="text-xs text-slate-300 leading-relaxed">Fokus mental yang terjaga mengurangi kesalahan logika saat memprogram serta meminimalisir bug pada produk gim/aplikasi.</p>
                         </div>
-                        <div class="p-5 rounded-2xl liquid-glass border-l-4 border-l-purple-400">
+                        <div class="p-5 rounded-2xl liquid-glass-card border-l-4 border-l-purple-400">
                             <h3 class="font-bold text-white mb-2 text-base">Investasi Kesehatan Jangka Panjang</h3>
                             <p class="text-xs text-slate-300 leading-relaxed">Mencegah penyakit degeneratif akibat pola kerja sedentari (terlalu lama duduk di depan komputer).</p>
                         </div>
-                        <div class="p-5 rounded-2xl liquid-glass border-l-4 border-l-amber-400">
+                        <div class="p-5 rounded-2xl liquid-glass-card border-l-4 border-l-amber-400">
                             <h3 class="font-bold text-white mb-2 text-base">Efisiensi Sumber Daya & Peralatan</h3>
                             <p class="text-xs text-slate-300 leading-relaxed">Merawat kondisi fisik perangkat keras agar bertahan lama dan aman dari bahaya korsleting arus listrik.</p>
                         </div>
@@ -278,17 +323,17 @@
                 <div class="max-w-4xl mx-auto px-6 w-full my-auto text-center">
                     <h2 class="text-3xl font-bold text-white mb-6"><i class="fa-solid fa-triangle-exclamation text-amber-400"></i> Identifikasi Risiko Utama</h2>
                     <div class="grid md:grid-cols-3 gap-4 text-left">
-                        <div class="p-5 rounded-2xl liquid-glass">
+                        <div class="p-5 rounded-2xl liquid-glass-card">
                             <i class="fa-solid fa-couch text-rose-400 text-3xl mb-3"></i>
                             <h3 class="font-bold text-white text-base mb-1">Gangguan Ergonomi</h3>
                             <p class="text-xs text-slate-300">Nyeri punggung, saraf terjepit, dan Carpal Tunnel Syndrome akibat posisi duduk yang buruk.</p>
                         </div>
-                        <div class="p-5 rounded-2xl liquid-glass">
+                        <div class="p-5 rounded-2xl liquid-glass-card">
                             <i class="fa-solid fa-eye-slash text-amber-400 text-3xl mb-3"></i>
                             <h3 class="font-bold text-white text-base mb-1">Kelelahan Mata</h3>
                             <p class="text-xs text-slate-300">Mata kering, iritasi, dan pandangan kabur akibat radiasi sinar biru monitor tanpa jeda.</p>
                         </div>
-                        <div class="p-5 rounded-2xl liquid-glass">
+                        <div class="p-5 rounded-2xl liquid-glass-card">
                             <i class="fa-solid fa-plug-circle-xmark text-cyan-400 text-3xl mb-3"></i>
                             <h3 class="font-bold text-white text-base mb-1">Bahaya Kelistrikan</h3>
                             <p class="text-xs text-slate-300">Kabel PC/Laptop yang berantakan, menumpuk, dan berisiko tersengat arus listrik.</p>
@@ -297,24 +342,24 @@
                 </div>
             </section>
 
-            <!-- SLIDE 6: K3 PERAKITAN HARDWARE (MATERI TAMBAHAN) -->
+            <!-- SLIDE 6: K3 PERAKITAN HARDWARE -->
             <section class="slide-item flex items-center justify-center">
                 <div class="max-w-4xl mx-auto px-6 w-full my-auto text-center">
                     <h2 class="text-3xl font-bold text-white mb-6"><i class="fa-solid fa-microchip text-brand-400"></i> K3 Perakitan & Perawatan Hardware</h2>
                     <div class="grid sm:grid-cols-2 gap-4 text-left">
-                        <div class="p-4 rounded-2xl liquid-glass">
+                        <div class="p-4 rounded-2xl liquid-glass-card">
                             <h4 class="font-bold text-sm text-white mb-1"><i class="fa-solid fa-power-off text-rose-400 mr-2"></i>Matikan Sumber Daya Listrik</h4>
                             <p class="text-xs text-slate-300">Selalu lepas kabel Power Supply (PSU) sebelum membuka atau merakit komponen PC/Laptop.</p>
                         </div>
-                        <div class="p-4 rounded-2xl liquid-glass">
+                        <div class="p-4 rounded-2xl liquid-glass-card">
                             <h4 class="font-bold text-sm text-white mb-1"><i class="fa-solid fa-hand-sparkles text-amber-400 mr-2"></i>Pencegahan Listrik Statis</h4>
                             <p class="text-xs text-slate-300">Gunakan gelang anti-statis (ESD wrist strap) dan hindari menyentuh langsung pin/kaki prosesor serta IC memory.</p>
                         </div>
-                        <div class="p-4 rounded-2xl liquid-glass">
+                        <div class="p-4 rounded-2xl liquid-glass-card">
                             <h4 class="font-bold text-sm text-white mb-1"><i class="fa-solid fa-hand-holding-droplet text-cyan-400 mr-2"></i>Kondisi Bebas Keringat</h4>
                             <p class="text-xs text-slate-300">Pastikan tangan dalam keadaan kering saat memegang komponen elektronik untuk mencegah korosi & korsleting.</p>
                         </div>
-                        <div class="p-4 rounded-2xl liquid-glass">
+                        <div class="p-4 rounded-2xl liquid-glass-card">
                             <h4 class="font-bold text-sm text-white mb-1"><i class="fa-solid fa-screwdriver-wrench text-purple-400 mr-2"></i>Penggunaan Alat yang Sesuai</h4>
                             <p class="text-xs text-slate-300">Gunakan obeng bermagnet terisolasi dan pasang harddisk/SSD dengan hati-hati tanpa memaksakan baut.</p>
                         </div>
@@ -327,19 +372,19 @@
                 <div class="max-w-4xl mx-auto px-6 w-full my-auto text-center">
                     <h2 class="text-3xl font-bold text-white mb-6"><i class="fa-solid fa-shield-virus text-brand-400"></i> Pencegahan Ergonomi & Mata</h2>
                     <div class="grid sm:grid-cols-2 gap-4 text-left">
-                        <div class="p-4 rounded-2xl liquid-glass">
+                        <div class="p-4 rounded-2xl liquid-glass-card">
                             <h4 class="font-bold text-sm text-white mb-1"><i class="fa-solid fa-chair text-brand-400 mr-2"></i>Kursi & Siku 90 Derajat</h4>
                             <p class="text-xs text-slate-300">Gunakan kursi yang menyangga punggung dan pastikan sudut siku tangan berada pada posisi 90 derajat.</p>
                         </div>
-                        <div class="p-4 rounded-2xl liquid-glass">
+                        <div class="p-4 rounded-2xl liquid-glass-card">
                             <h4 class="font-bold text-sm text-white mb-1"><i class="fa-solid fa-display text-cyan-400 mr-2"></i>Night Light & Monitor Sejajar Mata</h4>
                             <p class="text-xs text-slate-300">Posisikan layar sejajar dengan garis mata horizontal dan aktifkan fitur Night Light untuk menahan sinar biru.</p>
                         </div>
-                        <div class="p-4 rounded-2xl liquid-glass">
+                        <div class="p-4 rounded-2xl liquid-glass-card">
                             <h4 class="font-bold text-sm text-white mb-1"><i class="fa-solid fa-box-archive text-amber-400 mr-2"></i>Manajemen Kabel (Cable Management)</h4>
                             <p class="text-xs text-slate-300">Gunakan pelindung kabel (*cable organizer*) agar area meja kerja tidak berantakan dan rapi.</p>
                         </div>
-                        <div class="p-4 rounded-2xl liquid-glass">
+                        <div class="p-4 rounded-2xl liquid-glass-card">
                             <h4 class="font-bold text-sm text-white mb-1"><i class="fa-solid fa-mug-hot text-purple-400 mr-2"></i>Istirahat & Rehidrasi</h4>
                             <p class="text-xs text-slate-300">Minum air putih secukupnya dan hindari mengonsumsi kafein berlebihan saat maraton koding.</p>
                         </div>
@@ -347,7 +392,7 @@
                 </div>
             </section>
 
-            <!-- SLIDE 8: SOP PENERAPAN & TANGGAP DARURAT (MATERI TAMBAHAN) -->
+            <!-- SLIDE 8: SOP PENERAPAN & TANGGAP DARURAT -->
             <section class="slide-item flex items-center justify-center">
                 <div class="max-w-4xl mx-auto px-6 w-full my-auto text-center">
                     <h2 class="text-3xl font-bold text-white mb-6"><i class="fa-solid fa-sliders text-brand-400"></i> SOP & Tanggap Darurat Lab</h2>
@@ -377,24 +422,24 @@
                 </div>
             </section>
 
-            <!-- SLIDE 9: GREEN COMPUTING (MATERI TAMBAHAN) -->
+            <!-- SLIDE 9: GREEN COMPUTING -->
             <section class="slide-item flex items-center justify-center">
                 <div class="max-w-4xl mx-auto px-6 w-full my-auto text-center">
                     <h2 class="text-3xl font-bold text-white mb-6"><i class="fa-solid fa-leaf text-emerald-400"></i> Green Computing & E-Waste</h2>
                     <div class="grid sm:grid-cols-2 gap-4 text-left">
-                        <div class="p-5 rounded-2xl liquid-glass border-l-4 border-l-emerald-400">
+                        <div class="p-5 rounded-2xl liquid-glass-card border-l-4 border-l-emerald-400">
                             <h3 class="font-bold text-white mb-1 text-sm">Penghematan Energi Workstation</h3>
                             <p class="text-xs text-slate-300">Aktifkan moda *Sleep/Hibernate* saat tidak digunakan dan matikan komputer server/dev lokal di luar jam kerja.</p>
                         </div>
-                        <div class="p-5 rounded-2xl liquid-glass border-l-4 border-l-teal-400">
+                        <div class="p-5 rounded-2xl liquid-glass-card border-l-4 border-l-teal-400">
                             <h3 class="font-bold text-white mb-1 text-sm">Pengelolaan Limbah E-Waste</h3>
                             <p class="text-xs text-slate-300">Pisahkan komponen rusak (baterai laptop, motherboard, kabel) ke tempat penampungan e-waste agar tidak mencemari lingkungan.</p>
                         </div>
-                        <div class="p-5 rounded-2xl liquid-glass border-l-4 border-l-cyan-400">
+                        <div class="p-5 rounded-2xl liquid-glass-card border-l-4 border-l-cyan-400">
                             <h3 class="font-bold text-white mb-1 text-sm">Paperless Development</h3>
                             <p class="text-xs text-slate-300">Gunakan sistem dokumentasi digital (*Notion, Markdown, GitHub Wiki*) untuk mengurangi pemakaian kertas cetak.</p>
                         </div>
-                        <div class="p-5 rounded-2xl liquid-glass border-l-4 border-l-purple-400">
+                        <div class="p-5 rounded-2xl liquid-glass-card border-l-4 border-l-purple-400">
                             <h3 class="font-bold text-white mb-1 text-sm">Optimasi Sumber Daya Server</h3>
                             <p class="text-xs text-slate-300">Gunakan arsitektur *Cloud Computing* efisien untuk mengurangi pemborosan daya pemrosesan server.</p>
                         </div>
@@ -411,7 +456,7 @@
                         <p class="text-slate-300 text-sm leading-relaxed mb-6">
                             Penerapan K3LH PPLG secara konsisten tidak hanya melindungi kesehatan fisik dan mental pengembang software/gim, namun juga menjamin keselamatan perangkat keras, kepatuhan hukum, dan kelestarian lingkungan.
                         </p>
-                        <button onclick="goToSlide(0)" class="px-6 py-2.5 rounded-xl bg-brand-500 text-slate-950 font-bold text-xs hover:bg-brand-400 transition-all cursor-pointer">
+                        <button onclick="goToSlide(0)" class="px-7 py-3 rounded-xl bg-brand-500 text-slate-950 font-bold text-xs hover:bg-brand-400 hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer shadow-lg shadow-brand-500/20">
                             Kembali ke Awal
                         </button>
                     </div>
@@ -421,12 +466,17 @@
         </div>
     </main>
 
-    <!-- ULTRA SMOOTH FLOATING TASKBAR -->
+    <!-- FLOATING TASKBAR -->
     <div class="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 w-[94%] max-w-5xl">
-        <div class="liquid-glass rounded-2xl p-2 border-white/10 flex items-center gap-2 shadow-2xl relative">
+        <div class="liquid-glass rounded-2xl p-2 border-white/10 flex items-center gap-1.5 shadow-2xl relative">
             
+            <!-- Tombol Panah Geser Kiri -->
+            <button onclick="scrollTaskbar('left')" class="w-7 h-7 rounded-lg bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white flex items-center justify-center text-xs shrink-0 cursor-pointer transition-colors" title="Geser Kiri">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
             <!-- Logo Left -->
-            <div onclick="goToSlide(0)" class="px-3 py-1.5 flex items-center gap-2 cursor-pointer shrink-0">
+            <div onclick="goToSlide(0)" class="px-2 py-1.5 flex items-center gap-2 cursor-pointer shrink-0 hover:scale-105 transition-transform">
                 <div class="w-7 h-7 rounded-lg bg-brand-500/20 text-brand-400 border border-brand-500/40 flex items-center justify-center text-xs">
                     <i class="fa-solid fa-shield-halved"></i>
                 </div>
@@ -441,47 +491,79 @@
 
                 <!-- Nav Buttons -->
                 <nav id="navBar" class="relative z-10 flex items-center gap-1 min-w-max px-1">
-                    <button onclick="goToSlide(0)" class="nav-btn px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-300 transition-colors flex items-center gap-2 shrink-0 cursor-pointer">
+                    <button onclick="goToSlide(0)" class="nav-btn px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-300 flex items-center gap-2 shrink-0 cursor-pointer">
                         <i class="fa-solid fa-house"></i> <span>Hero</span>
                     </button>
-                    <button onclick="goToSlide(1)" class="nav-btn px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-300 transition-colors flex items-center gap-2 shrink-0 cursor-pointer">
+                    <button onclick="goToSlide(1)" class="nav-btn px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-300 flex items-center gap-2 shrink-0 cursor-pointer">
                         <i class="fa-solid fa-users"></i> <span>Anggota</span>
                     </button>
-                    <button onclick="goToSlide(2)" class="nav-btn px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-300 transition-colors flex items-center gap-2 shrink-0 cursor-pointer">
+                    <button onclick="goToSlide(2)" class="nav-btn px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-300 flex items-center gap-2 shrink-0 cursor-pointer">
                         <i class="fa-solid fa-scale-balanced"></i> <span>Definisi & Hukum</span>
                     </button>
-                    <button onclick="goToSlide(3)" class="nav-btn px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-300 transition-colors flex items-center gap-2 shrink-0 cursor-pointer">
+                    <button onclick="goToSlide(3)" class="nav-btn px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-300 flex items-center gap-2 shrink-0 cursor-pointer">
                         <i class="fa-solid fa-bullseye"></i> <span>Objektif</span>
                     </button>
-                    <button onclick="goToSlide(4)" class="nav-btn px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-300 transition-colors flex items-center gap-2 shrink-0 cursor-pointer">
+                    <button onclick="goToSlide(4)" class="nav-btn px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-300 flex items-center gap-2 shrink-0 cursor-pointer">
                         <i class="fa-solid fa-compass"></i> <span>Tujuan</span>
                     </button>
-                    <button onclick="goToSlide(5)" class="nav-btn px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-300 transition-colors flex items-center gap-2 shrink-0 cursor-pointer">
+                    <button onclick="goToSlide(5)" class="nav-btn px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-300 flex items-center gap-2 shrink-0 cursor-pointer">
                         <i class="fa-solid fa-triangle-exclamation"></i> <span>Risiko</span>
                     </button>
-                    <button onclick="goToSlide(6)" class="nav-btn px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-300 transition-colors flex items-center gap-2 shrink-0 cursor-pointer">
+                    <button onclick="goToSlide(6)" class="nav-btn px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-300 flex items-center gap-2 shrink-0 cursor-pointer">
                         <i class="fa-solid fa-microchip"></i> <span>K3 Hardware</span>
                     </button>
-                    <button onclick="goToSlide(7)" class="nav-btn px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-300 transition-colors flex items-center gap-2 shrink-0 cursor-pointer">
+                    <button onclick="goToSlide(7)" class="nav-btn px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-300 flex items-center gap-2 shrink-0 cursor-pointer">
                         <i class="fa-solid fa-shield-virus"></i> <span>Pencegahan</span>
                     </button>
-                    <button onclick="goToSlide(8)" class="nav-btn px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-300 transition-colors flex items-center gap-2 shrink-0 cursor-pointer">
+                    <button onclick="goToSlide(8)" class="nav-btn px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-300 flex items-center gap-2 shrink-0 cursor-pointer">
                         <i class="fa-solid fa-sliders"></i> <span>SOP & Darurat</span>
                     </button>
-                    <button onclick="goToSlide(9)" class="nav-btn px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-300 transition-colors flex items-center gap-2 shrink-0 cursor-pointer">
+                    <button onclick="goToSlide(9)" class="nav-btn px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-300 flex items-center gap-2 shrink-0 cursor-pointer">
                         <i class="fa-solid fa-leaf"></i> <span>Green Computing</span>
                     </button>
-                    <button onclick="goToSlide(10)" class="nav-btn px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-300 transition-colors flex items-center gap-2 shrink-0 cursor-pointer">
+                    <button onclick="goToSlide(10)" class="nav-btn px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-300 flex items-center gap-2 shrink-0 cursor-pointer">
                         <i class="fa-solid fa-circle-check"></i> <span>Kesimpulan</span>
                     </button>
                 </nav>
             </div>
 
+            <!-- Tombol Panah Geser Kanan -->
+            <button onclick="scrollTaskbar('right')" class="w-7 h-7 rounded-lg bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white flex items-center justify-center text-xs shrink-0 cursor-pointer transition-colors" title="Geser Kanan">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
         </div>
     </div>
 
-    <!-- JS CONTROLLER -->
+    <!-- JS CONTROLLER SUPER SMOOTH -->
     <script>
+        // Data 7 Anggota tanpa title
+        const anggotaKelompok = [
+            "Devita",
+            "Raivanka",
+            "Dini",
+            "Dimas",
+            "Iqbal",
+            "Ahmad Dani",
+            "Satria"
+        ];
+
+        // Render Anggota ke HTML
+        const containerAnggota = document.getElementById('anggotaList');
+        if (containerAnggota) {
+            containerAnggota.innerHTML = anggotaKelompok.map((nama, index) => `
+                <div class="p-4 rounded-2xl liquid-glass-card flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-brand-500/20 text-brand-400 flex items-center justify-center font-bold text-sm shrink-0">
+                        ${index + 1}
+                    </div>
+                    <div>
+                        <span class="font-semibold text-white text-base block">${nama}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // System Control Slides
         let currentSlide = 0;
         const totalSlides = 11;
         const slideContainer = document.getElementById('slideContainer');
@@ -493,15 +575,14 @@
             const activeBtn = navBtns[currentSlide];
             if (!activeBtn) return;
 
-            // Kalkulasi posisi presisi indikator air
             const left = activeBtn.offsetLeft;
             const width = activeBtn.offsetWidth;
 
             waterDrop.style.left = `${left}px`;
             waterDrop.style.width = `${width}px`;
 
-            // Auto-scroll bilah navigasi jika tombol di luar layar
-            activeBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            // Auto center active button smoothly using physics/inertia handler
+            smoothScrollTo(scrollContainer, activeBtn.offsetLeft - (scrollContainer.clientWidth / 2) + (activeBtn.clientWidth / 2), 600);
         }
 
         function updateSlide() {
@@ -545,12 +626,108 @@
             }
         });
 
-        // Ambient Mouse Tracking
-        const cursorGlow = document.getElementById('cursor-glow');
-        window.addEventListener('mousemove', (e) => {
-            cursorGlow.style.left = e.clientX + 'px';
-            cursorGlow.style.top = e.clientY + 'px';
+        const scrollContainer = document.getElementById('navScrollContainer');
+
+        // Fungsi Animasi Scroll Kustom Menggunakan Interpollation (Lerp) agar Super Smooth
+        function smoothScrollTo(element, targetScrollLeft, duration) {
+            const startScrollLeft = element.scrollLeft;
+            const distance = targetScrollLeft - startScrollLeft;
+            let startTime = null;
+
+            function animation(currentTime) {
+                if (!startTime) startTime = currentTime;
+                const timeElapsed = currentTime - startTime;
+                const progress = Math.min(timeElapsed / duration, 1);
+                
+                // Easing cubicOut untuk efek berhenti mulus tanpa jeda kaku
+                const ease = 1 - Math.pow(1 - progress, 3);
+                
+                element.scrollLeft = startScrollLeft + (distance * ease);
+
+                if (timeElapsed < duration) {
+                    requestAnimationFrame(animation);
+                }
+            }
+            requestAnimationFrame(animation);
+        }
+
+        // Tombol Panah Kecil Manual
+        function scrollTaskbar(direction) {
+            const scrollAmount = 250;
+            const target = direction === 'left' ? scrollContainer.scrollLeft - scrollAmount : scrollContainer.scrollLeft + scrollAmount;
+            smoothScrollTo(scrollContainer, target, 400);
+        }
+
+        // SUPERSMOOTH MOUSE WHEEL SCROLL (Merubah scroll vertikal mouse menjadi momentum horizontal halus)
+        let targetScroll = scrollContainer.scrollLeft;
+        let isWheeling = false;
+
+        scrollContainer.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            targetScroll += e.deltaY * 1.5;
+            
+            // Batasi agar tidak lewat batas minimal/maksimal
+            targetScroll = Math.max(0, Math.min(targetScroll, scrollContainer.scrollWidth - scrollContainer.clientWidth));
+            
+            if (!isWheeling) {
+                isWheeling = true;
+                requestAnimationFrame(stepWheelScroll);
+            }
+        }, { passive: false });
+
+        function stepWheelScroll() {
+            // Efek redaman (inertia damping) dengan LERP formula
+            const diff = targetScroll - scrollContainer.scrollLeft;
+            if (Math.abs(diff) > 0.5) {
+                scrollContainer.scrollLeft += diff * 0.15; // Kehalusan redaman
+                requestAnimationFrame(stepWheelScroll);
+            } else {
+                scrollContainer.scrollLeft = targetScroll;
+                isWheeling = false;
+            }
+        }
+
+        // Fitur Drag to Scroll (Geser Taskbar Pakai Mouse / Jari)
+        let isDown = false;
+        let startX;
+        let scrollLeftStart;
+
+        scrollContainer.addEventListener('mousedown', (e) => {
+            isDown = true;
+            startX = e.pageX - scrollContainer.offsetLeft;
+            scrollLeftStart = scrollContainer.scrollLeft;
+            targetScroll = scrollLeftStart;
         });
+
+        scrollContainer.addEventListener('mouseleave', () => { isDown = false; });
+        scrollContainer.addEventListener('mouseup', () => { isDown = false; });
+
+        scrollContainer.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - scrollContainer.offsetLeft;
+            const walk = (x - startX) * 2;
+            scrollContainer.scrollLeft = scrollLeftStart - walk;
+            targetScroll = scrollContainer.scrollLeft;
+        });
+
+        // Ultra Smooth Ambient Mouse Tracking dengan RequestAnimationFrame
+        const cursorGlow = document.getElementById('cursor-glow');
+        let mouseX = 0, mouseY = 0;
+        let currentX = 0, currentY = 0;
+
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        function animateCursor() {
+            currentX += (mouseX - currentX) * 0.1;
+            currentY += (mouseY - currentY) * 0.1;
+            cursorGlow.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) translate(-50%, -50%)`;
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
 
         window.addEventListener('resize', updateWaterDrop);
         window.addEventListener('load', () => {
